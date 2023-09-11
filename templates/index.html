@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="jumbotron">
+        {% if user.is_authenticated %}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-body">
+                        <h1 style="text-transform: uppercase; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Current User :  {{ user.username }} </h1>
+                        <a class="btn btn-primary" href="{% url 'posts:create_post' %}">Create Posts</a>
+                        <br><br>
+                        <a class="btn btn-primary" href="{% url 'posts:my_post' %}">My Own Posts</a>
+                        <br><br>
+                        <a class="btn btn-primary" href="{% url 'groups:create_groups' %}">Create Groups</a>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <form action="{% url 'accounts:register' %}">
+                <h1>First Register</h1>
+                <input type="submit" value="Create account" class="btn btn-success">    
+            </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

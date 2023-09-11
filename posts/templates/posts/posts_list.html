@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="font-size: 40px;text-transform:uppercase;font-family:Georgia, 'Times New Roman', Times, serif;text-align:center"> Daily Posts </h1><hr><br>
+    {% for i in values %}
+        <h1 style="font-family:fantasy;font-size: 40px;text-shadow:3px 3px 10px black;color:rgb(30, 255, 0)" >{{ i.postname }}</h1>
+        <h2 style="font-family: 'Times New Roman', Times, serif;"> {{ i.description }} </h2>
+        <h3 style="color: blueviolet;"> Created on : {{ i.created_at }}</h3>
+        <h3 style="color: blueviolet;">Updated on : {{ i.updated_at }}</h3>
+        <a href="" style="font-size:25px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;text-transform:uppercase;text-decoration:none"> Posted By : {{ i.author }}</a><br><br><br>
+        <!-- <form action="" method="POST">
+            Comments : <input type="text" name="comments" id="">
+            <input type="submit" value="Submit">
+        </form>
+        <h2> {{ comments }} </h2><br><br><hr><br><br><hr> -->
+    {% endfor %}
+</body>
+</html>
